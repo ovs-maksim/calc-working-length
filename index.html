@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<form name="calcForm" id="calcForm">
+		
+			<div class="title" id="title">Введите полную длину пути</div>
+			<input type="text" id="full-length" name="full-length">
+		
+		
+			<div class="title" id="title">Выберите локомотив</div>
+			<select name="loco" id="loco">
+				<option value=35>ЧС-7</option>
+			</select>
+		
+		<button id="calc-button">Рассчитать</button>
+		<div class="result" id="result"></div>
+	</form>
+	<script>
+		const calcForm = document.querySelector('#calcForm');
+		const fullLength = document.querySelector('#full-length');
+		const locoLength = document.querySelector('#loco');
+		const calcButton = document.querySelector('#calc-button');
+		const carLength = 25;
+		const result = document.querySelector('#result');
+		calcButton.addEventListener('click', function(e) {
+			e.preventDefault();
+			let workingLength = (fullLength.value - locoLength.value) / carLength;
+			result.textContent = Math.floor(workingLength);
+			console.log(carLength);
+		})
+		
+
+	</script>
+</body>
+</html>
