@@ -26,7 +26,7 @@
 			</select>
 		
 		<button id="calc-button">Рассчитать</button>
-		<div class="result" id="result"></div>
+		<div class="countresult" id="countresult"></div>
 	</form>
 	<script>
 		const calcForm = document.querySelector('#calcForm');
@@ -34,11 +34,11 @@
 		const locoLength = document.querySelector('#loco');
 		const calcButton = document.querySelector('#calc-button');
 		const carLength = document.querySelector('#cartype');;
-		const result = document.querySelector('#result');
+		const countresult = document.querySelector('#countresult');
 		calcButton.addEventListener('click', function(e) {
 			e.preventDefault();
 			let workingLength = (fullLength.value - locoLength.value) / carLength.value;
-			result.textContent = Math.floor(workingLength);
+			countresult.textContent = Math.floor(workingLength);
 			console.log(carLength);
 			fullLength.value = '';
 		})
